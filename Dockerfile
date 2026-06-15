@@ -15,8 +15,7 @@ RUN apt-get update && apt-get install -y \
 
 WORKDIR /opt
 
-RUN wget -O android.iso \
-    https://osdn.net/projects/android-x86/releases/download/9.0-r2/android-x86_64-9.0-r2.iso
+COPY android.iso /opt/android.iso
 
 RUN qemu-img create -f qcow2 android.qcow2 16G
 
